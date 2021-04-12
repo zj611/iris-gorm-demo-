@@ -9,13 +9,13 @@ import (
 )
 
 func main() {
+
 	flag.Parse()
 	app := newApp()
 	route.InitRouter(app)
 	err := app.Run(iris.Addr(":"+conf.Sysconfig.Port), iris.WithoutServerError(iris.ErrServerClosed))
 	if err != nil {
 		panic(err)
-
 	}
 }
 
